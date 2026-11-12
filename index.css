@@ -1,3 +1,5 @@
-.page-home {
-  /* seu primeira regra de css aqui */
+.page-home {}
+
+.page-home .tag {
+  align-self: flex-start;
 }
