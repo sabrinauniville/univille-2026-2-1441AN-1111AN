@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APOD - Foto Astronômica do Dia</title>
+  <link rel="stylesheet" href="../../styles/design-tokens.css">
+  <link rel="stylesheet" href="../../styles/styles.css">
+  <link rel="stylesheet" href="./apod.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html">← Voltar para o início</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Foto Astronômica do Dia</h1>
+
+    <form id="apod-form">
+      <label for="start-date">Data inicial</label>
+      <input type="date" id="start-date" required>
+
+      <label for="end-date">Data final</label>
+      <input type="date" id="end-date" required>
+
+      <button type="submit">Buscar</button>
+    </form>
+
+    <p id="apod-status" aria-live="polite"></p>
+    <section id="apod-result"></section>
+  </main>
+
+  <script type="module" src="./apod.js"></script>
+</body>
+
+</html>
