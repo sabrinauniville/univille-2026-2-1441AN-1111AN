@@ -1,0 +1,137 @@
+.date-range-panel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  margin: var(--space-6) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  background-color: var(--color-surface);
+}
+
+.date-range-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+  flex-basis: 100%;
+}
+
+.date-range-panel input,
+.field-group input,
+.field-group select,
+.field-group textarea {
+  width: 100%;
+  min-height: var(--min-height-input);
+  padding: var(--space-input-y) var(--space-input-x);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-input);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.date-range-panel input:focus,
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  outline: none;
+  border-color: var(--color-border-strong);
+}
+
+.date-range-panel input:invalid,
+.field-group input:invalid,
+.field-group select:invalid,
+.field-group textarea:invalid {
+  border-color: var(--color-border);
+}
+
+.field-group {
+  margin-bottom: var(--space-form-group);
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-weight-semibold);
+}
+
+.field-help,
+.field-error {
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.field-error {
+  color: var(--color-danger-soft);
+}
+
+.input-error {
+  border-color: var(--color-danger-soft) !important;
+}
+
+.status-banner {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.date-range-panel button,
+.form-actions button {
+  width: 100%;
+  margin-right: 0;
+}
+
+.form-actions {
+  display: grid;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .date-range-panel {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .date-range-panel #update-data {
+    margin-top: 30px;
+  }
+
+  .date-range-panel button,
+  .form-actions button {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
+  .form-actions {
+    display: block;
+  }
+
+  .date-range-panel label {
+    flex-basis: 48%;
+  }
+}
+
+.page-insight .date-range-panel {
+  align-items: center;
+}
+
+.page-insight .date-range-panel p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+.page-insight .date-range-panel button {
+  margin-left: auto;
+}
+
+.page-insight .results-list {
+  margin-top: var(--space-6);
+}
+
+.page-insight .result-card {
+  align-items: center;
+}
+
+.page-insight .result-card h3 {
+  margin-top: 0;
+}

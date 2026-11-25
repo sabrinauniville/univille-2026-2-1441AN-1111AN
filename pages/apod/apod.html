@@ -4,20 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APOD - Foto Astronômica do Dia</title>
-  <link rel="stylesheet" href="../../styles/design-tokens.css">
+  <title>APOD - NASA APIs</title>
   <link rel="stylesheet" href="../../styles/styles.css">
+  <link rel="stylesheet" href="../../styles/components/header.css">
+  <link rel="stylesheet" href="../../styles/components/footer.css">
   <link rel="stylesheet" href="./apod.css">
+  <script type="module" src="./apod.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="../../index.html">← Voltar para o início</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">NASA APIs</a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="../../index.html">Início</a>
+        <a href="./apod.html" aria-current="page">APOD</a>
+        <a href="../contact/contact.html">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="main-content" class="page-apod">
     <h1>Foto Astronômica do Dia</h1>
 
     <form id="apod-form">
@@ -34,7 +41,12 @@
     <section id="apod-result"></section>
   </main>
 
-  <script type="module" src="./apod.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>NASA Open APIs • UNIVILLE</p>
+      <small>Todos os direitos reservados</small>
+    </div>
+  </footer>
 </body>
 
 </html>

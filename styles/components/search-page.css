@@ -1,0 +1,49 @@
+.page-apod .date-range-panel,
+.page-neows .date-range-panel {
+  align-items: end;
+}
+
+.page-apod .date-range-panel label,
+.page-neows .date-range-panel label {
+  flex: 1 1 220px;
+}
+
+.page-apod .results-list,
+.page-neows .results-list {
+  margin-top: var(--space-6);
+}
+
+.page-apod .result-card,
+.page-neows .result-card {
+  align-items: center;
+}
+
+.page-apod .result-card h3,
+.page-neows .result-card h3 {
+  margin-top: 0;
+}
+
+.page-insight .date-range-panel {
+  align-items: center;
+}
+
+.page-insight .date-range-panel p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+.page-insight .date-range-panel button {
+  margin-left: auto;
+}
+
+.page-insight .results-list {
+  margin-top: var(--space-6);
+}
+
+.page-insight .result-card {
+  align-items: center;
+}
+
+.page-insight .result-card h3 {
+  margin-top: 0;
+}
