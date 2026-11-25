@@ -1,0 +1,8 @@
+/* TODO: add class search-form to page-apod and page-neows */
+.search-form .date-range-panel {
+  align-items: end;
+}
+
+.search-form .date-range-panel label {
+  flex: 1 1 220px;
+}

@@ -9,4 +9,5 @@
 .site-footer a:hover,
 .site-footer a:focus-visible {
   border-bottom: 1px dashed var(--color-white);
+  opacity: 0.8;
 }

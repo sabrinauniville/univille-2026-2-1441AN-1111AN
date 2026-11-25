@@ -1,0 +1,12 @@
+/* TODO: add class search-results to page-apod and page-neows */
+.search-results .results-list {
+  margin-top: var(--space-6);
+}
+
+.search-results .result-card {
+  align-items: center;
+}
+
+.search-results .result-card h3 {
+  margin-top: 0;
+}

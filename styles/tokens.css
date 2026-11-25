@@ -1,3 +1,10 @@
+/* Design system guidance:
+  - Use semantic tokens from this file instead of hardcoded colors.
+  - Typography scale: h1/h2/h3/p/small/span/a/button should follow the tokens above.
+  - Buttons: primary and secondary variants must share the same base style and spacing.
+  - Tags, labels, and badges use the neutral light gray palette and uppercase spaced text.
+*/
+
 :root {
   --color-bg: #f2eeee;
   --color-bg-dark: #000000;
@@ -66,10 +73,3 @@
   --transition-base: 0.2s ease-in-out;
   --container-width: min(1180px, calc(100% - 48px));
 }
-
-/* Design system guidance:
-  - Use semantic tokens from this file instead of hardcoded colors.
-  - Typography scale: h1/h2/h3/p/small/span/a/button should follow the tokens above.
-  - Buttons: primary and secondary variants must share the same base style and spacing.
-  - Tags, labels, and badges use the neutral light gray palette and uppercase spaced text.
-*/
