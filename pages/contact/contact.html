@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +10,14 @@
   <link rel="stylesheet" href="./contact.css">
 </head>
 
-<body>
+<body class="page-contact">
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="../../index.html">NASA APIs</a>
       <nav class="site-nav" aria-label="Navegação principal">
-        <a href="../../index.html" aria-current="page">Início</a>
-        <a href="../apod/apod.html" aria-current="page">APOD</a>
-        <a href="../contact/contact.html" aria-current="page">Contato</a>
+        <a href="../../index.html">Início</a>
+        <a href="../apod/apod.html">APOD</a>
+        <a href="./contact.html" aria-current="page">Contato</a>
       </nav>
     </div>
   </header>
@@ -33,9 +32,73 @@
         </p>
       </div>
     </section>
+
+    <section class="section grey contact-card" aria-labelledby="contact-form-title">
+      <div class="container">
+        <h3 id="contact-form-title">Enviar mensagem</h3>
+
+        <form id="contact-form" novalidate>
+          <div class="field-group">
+            <label for="name">
+              Nome completo
+              <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <input id="name" name="name" type="text" maxlength="80" placeholder="Digite seu nome"
+              aria-describedby="name-help name-error" aria-invalid="false" required>
+            <small id="name-help" class="field-help">Informe seu nome completo.</small>
+          </div>
+
+          <div class="field-group">
+            <label for="email">
+              E-mail
+              <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <input id="email" name="email" type="email" maxlength="120" placeholder="seuemail@exemplo.com"
+              aria-describedby="email-help email-error" aria-invalid="false" required>
+            <small id="email-help" class="field-help">Use um e-mail válido.</small>
+          </div>
+
+          <div class="field-group">
+            <label for="subject">
+              Assunto
+              <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <select id="subject" name="subject" aria-describedby="subject-help subject-error" aria-invalid="false"
+              required>
+              <option value="">Selecione...</option>
+              <option value="suporte">Suporte</option>
+              <option value="sugestao">Sugestão</option>
+              <option value="outro">Outro</option>
+            </select>
+            <small id="subject-help" class="field-help">Escolha o motivo do contato.</small>
+          </div>
+
+          <div class="field-group">
+            <label for="message">
+              Mensagem
+              <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Escreva sua mensagem aqui"
+              aria-describedby="message-help message-error" aria-invalid="false" required></textarea>
+            <small id="message-help" class="field-help">A mensagem deve ter entre 10 e 500 caracteres.</small>
+          </div>
+
+          <div class="form-actions">
+            <button id="submit-contact" type="submit" class="cta-button" disabled aria-disabled="true">
+              Enviar mensagem
+            </button>
+            <button id="reset-form" type="reset" class="secondary-button">
+              Limpar
+            </button>
+          </div>
+
+          <p id="form-status" class="status-banner" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer"> </footer>
+  <footer class="site-footer"></footer>
 </body>
 
 </html>
