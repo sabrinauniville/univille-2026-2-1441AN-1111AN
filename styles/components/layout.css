@@ -1,0 +1,38 @@
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+main {
+  flex: 1;
+}
+
+.home-page {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: var(--space-8);
+}
+
+.section {
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-card);
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 861px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

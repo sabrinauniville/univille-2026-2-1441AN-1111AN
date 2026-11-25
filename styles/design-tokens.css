@@ -1,0 +1,75 @@
+:root {
+  --color-bg: #f2eeee;
+  --color-bg-dark: #000000;
+  --color-bg-muted: #e3e3e3;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f7f7;
+  --color-text: #2e2e32;
+  --color-text-muted: #58585b;
+  --color-text-soft: #6f6f75;
+  --color-border: #b9b9b9;
+  --color-border-strong: #2e2e32;
+  --color-primary: #d83933;
+  --color-primary-alt: #c9302b;
+  --color-link: #2e2e32;
+  --color-status: rgb(40, 139, 255);
+  --color-success: #2f8f5b;
+  --color-warning: #c77c00;
+  --color-danger: #c9302b;
+  --color-danger-soft: #f5a3a3;
+  --color-overlay: rgba(0, 0, 0, 0.56);
+  --color-focus: #E0615C;
+  --color-footer-text: #b9b9bb;
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+
+  --space-input-y: 0.75rem;
+  --space-input-x: 0.85rem;
+  --space-form-group: 1rem;
+  --min-height-header: 74px;
+  --min-height-input: 2.8rem;
+  --min-height-textarea: 150px;
+
+  --font-family-sans: "Segoe UI", Arial, sans-serif;
+  --font-size-h1: 2.1875rem;
+  --font-size-h2: 1.875rem;
+  --font-size-h3: 1.5rem;
+  --font-size-p: 0.875rem;
+  --font-size-small: 0.625rem;
+  --font-size-span: 0.75rem;
+  --font-size-a: 0.875rem;
+  --font-size-button: 1.125rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  --letter-spacing-small: 3px;
+  --radius-button: 0.25rem;
+  --radius-tag: 0.5rem;
+  --radius-input: 1px;
+  --radius-card: 0.25rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --transition-base: 0.2s ease-in-out;
+  --container-width: min(1180px, calc(100% - 48px));
+}
+
+/* Design system guidance:
+  - Use semantic tokens from this file instead of hardcoded colors.
+  - Typography scale: h1/h2/h3/p/small/span/a/button should follow the tokens above.
+  - Buttons: primary and secondary variants must share the same base style and spacing.
+  - Tags, labels, and badges use the neutral light gray palette and uppercase spaced text.
+*/

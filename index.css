@@ -1,5 +1,62 @@
-.page-home {}
+.page-home .grid {
+  margin-top: 28px;
+}
+
+.page-home .card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.page-home .card .cta-button {
+  margin-top: auto;
+}
+
+.page-home .card p {
+  flex: 1;
+}
 
 .page-home .tag {
   align-self: flex-start;
+}
+
+.page-home .section.dark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 28rem;
+}
+
+.page-home .section.dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-overlay);
+}
+
+.page-home .hds-media-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  margin: 0;
+}
+
+.page-home .hds-video-background {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 21% 61%;
+}
+
+.page-home .section.dark> :not(.hds-media-background) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-home .hds-video-background {
+    display: none;
+  }
 }
