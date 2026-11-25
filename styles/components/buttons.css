@@ -1,0 +1,55 @@
+.tag,
+.gov-badge {
+  display: inline-block;
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: var(--radius-tag);
+  transition: background-color var(--transition-base), color var(--transition-base), opacity var(--transition-base);
+  text-decoration: none;
+}
+
+.gov-badge {
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+}
+
+button,
+.cta-button,
+.secondary-button,
+#update-data {
+  appearance: none;
+  display: block;
+  margin-right: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  margin: auto;
+  border: 0;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  text-align: center;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+button,
+.cta-button,
+#update-data {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+.secondary-button {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+button:disabled,
+.cta-button:disabled,
+#update-data:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

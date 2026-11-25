@@ -1,0 +1,106 @@
+.content-card,
+.result-card,
+.contact-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.content-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 861px) {
+  .content-card {
+    grid-template-columns: minmax(0, 1.3fr) minmax(220px, 420px);
+  }
+}
+
+.text-block {
+  min-width: 0;
+}
+
+.text-block h3 {
+  margin: 0 0 0.5rem;
+}
+
+.date {
+  margin: 0 0 0.75rem;
+}
+
+#photo-image {
+  width: 100%;
+  min-height: 220px;
+  max-height: 390px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.results-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Ensures a visible focus ring when focus is moved here programmatically after an async update */
+.card:focus,
+.results-list:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  padding: 1.25rem;
+}
+
+@media (min-width: 861px) {
+  .result-card {
+    grid-template-columns: minmax(0, 1.2fr) minmax(220px, 320px);
+  }
+}
+
+.result-card img {
+  width: 100%;
+  aspect-ratio: 1.35 / 1;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  overflow-wrap: anywhere;
+  margin-bottom: 20px;
+}
+
+.article {
+  padding: 10px;
+  overflow-wrap: anywhere;
+}
+
+.tag {
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-tag);
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-small);
+  text-transform: uppercase;
+}
