@@ -1,14 +1,33 @@
-.site-header,
-.site-footer {
-  background-color: var(--color-bg-dark);
-  color: var(--color-white);
-}
-
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: var(--space-2);
+}
+
+.site-nav a[aria-current="page"] {
+  border-bottom: 1px solid var(--color-white);
+}
+
+.brand {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.site-header,
+.site-footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
 }
 
 .header-inner,
@@ -19,15 +38,6 @@
   justify-content: space-between;
   gap: var(--space-2);
   min-height: var(--min-height-header);
-}
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  gap: var(--space-2);
 }
 
 .site-nav a,
@@ -41,18 +51,13 @@
   text-align: center;
 }
 
-.site-nav a[aria-current="page"] {
-  border-bottom: 1px solid var(--color-white);
-}
-
-.brand {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  text-align: center;
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  opacity: 0.8;
+  border-bottom: 1px dashed var(--color-white);
 }
 
 @media (min-width: 768px) {
-
   .header-inner,
   .footer-inner {
     gap: var(--space-4);
@@ -66,7 +71,6 @@
 }
 
 @media (min-width: 861px) {
-
   .header-inner,
   .footer-inner,
   .date-range-panel {

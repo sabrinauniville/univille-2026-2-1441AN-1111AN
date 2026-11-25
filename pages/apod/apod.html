@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>APOD - NASA APIs</title>
   <link rel="stylesheet" href="../../styles/styles.css">
-  <link rel="stylesheet" href="../../styles/components/header.css">
-  <link rel="stylesheet" href="../../styles/components/footer.css">
   <link rel="stylesheet" href="./apod.css">
   <script type="module" src="./apod.js"></script>
 </head>
@@ -25,10 +23,13 @@
   </header>
 
   <main id="main-content" class="page-apod">
-    <section class="section grey intro"></section>
-    <section class="section grey date-range-panel"></section>
-    <section class="section grey main-result"></section>
-    <section id="results-list" class="section grey results-list hidden" role="region" aria-live="polite" aria-atomic="true" aria-label="Resultados da busca" tabindex="-1"></section>
+    <div class="container">
+      <section class="section grey intro"></section>
+      <section class="section grey search-form date-range-panel"></section>
+      <section class="section grey main-result"></section>
+      <section id="results-list" class="section grey search-results results-list hidden" role="region"
+        aria-live="polite" aria-atomic="true" aria-label="Resultados da busca" tabindex="-1"></section>
+    </div>
   </main>
 
   <footer class="site-footer">

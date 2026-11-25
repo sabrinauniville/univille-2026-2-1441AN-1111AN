@@ -1,0 +1,31 @@
+.tag {
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-tag);
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-small);
+  text-transform: uppercase;
+}
+
+.gov-badge {
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+}
+
+.tag,
+.gov-badge {
+  display: inline-block;
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: var(--radius-tag);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    opacity var(--transition-base);
+  text-decoration: none;
+}

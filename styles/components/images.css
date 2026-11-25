@@ -1,0 +1,13 @@
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#photo-image {
+  width: 100%;
+  min-height: 220px;
+  max-height: 390px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}

@@ -110,28 +110,3 @@
     flex-basis: 48%;
   }
 }
-
-.page-insight .date-range-panel {
-  align-items: center;
-}
-
-.page-insight .date-range-panel p {
-  margin: 0;
-  color: var(--color-text-soft);
-}
-
-.page-insight .date-range-panel button {
-  margin-left: auto;
-}
-
-.page-insight .results-list {
-  margin-top: var(--space-6);
-}
-
-.page-insight .result-card {
-  align-items: center;
-}
-
-.page-insight .result-card h3 {
-  margin-top: 0;
-}
