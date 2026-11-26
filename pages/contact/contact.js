@@ -21,3 +21,11 @@ function submitForm(event) {
   formStatus.textContent = "Mensagem enviada com sucesso!";
   formStatus.hidden = false;
 }
+function resetForm() {
+  cleanFieldErrors();
+
+  formStatus.textContent = "";
+  formStatus.hidden = true;
+
+  submitButton.disabled = true;
+}
