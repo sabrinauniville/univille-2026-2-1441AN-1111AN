@@ -29,3 +29,21 @@ function resetForm() {
 
   submitButton.disabled = true;
 }
+
+
+function validateForm() {
+  cleanFieldErrors();
+
+  let isValid = true;
+
+  formFields.forEach(({ field, validator }) => {
+    const result = validator(field.value);
+
+    if (!result.valid) {
+      setFieldError(field, result.message);
+      isValid = false;
+    }
+  });
+
+  return isValid;
+}
