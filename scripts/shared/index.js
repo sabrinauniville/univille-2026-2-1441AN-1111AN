@@ -4,3 +4,5 @@ export * from "./page-state.js";
 export * from "./validation.js";
 export * from "./data-workflow.js";
 export * from "./sanitize-html.js";
+export * from "./escape-html.js";
+export * from "./url-normalize.js";
