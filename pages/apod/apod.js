@@ -7,7 +7,6 @@ const dataPageController = createDataPageController({
   resultMessage: "Erro ao carregar APOD:"
 });
 
-
 dataPageController.updateStatus("");
 
 
@@ -19,9 +18,6 @@ dataPageController.updateStatus("");
 const startDateInput = document.getElementById("start-date");
 const endDateInput = document.getElementById("end-date");
 
-/**
- * Formata uma data no padrão YYYY-MM-DD (formato aceito pelo input type="date").
- */
 function formatDate(date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -29,31 +25,18 @@ function formatDate(date) {
   return `${year}-${month}-${day}`;
 }
 
-/**
- * Retorna o primeiro dia do mês atual.
- */
 function getCurrentMonthStart() {
   const today = new Date();
   const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
   return formatDate(firstDay);
 }
 
-/**
- * Retorna a última data disponível (ontem).
- */
 function getLastAvailableDate() {
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   return formatDate(yesterday);
 }
 
-/**
- * Configura os limites e os valores iniciais dos campos de data.
- *
- * Data mínima: definida pelo helper getCurrentMonthStart().
- * Data máxima: ontem, definida pelo helper getLastAvailableDate().
- * Valores iniciais: último dia disponível.
- */
 function setDefaultDateRange() {
   const minDate = getCurrentMonthStart();
   const maxDate = getLastAvailableDate();
@@ -67,5 +50,43 @@ function setDefaultDateRange() {
   endDateInput.value = maxDate;
 }
 
-// Inicializa o formulário quando a página carregar
 setDefaultDateRange();
+
+
+
+// =========================================
+// Renderização dos resultados do APOD
+// Exibe na página os dados retornados pelo serviço
+//
+
+function renderData(items) {
+  const collection = Array.isArray(items) ? items : [items];
+  if (!collection.length) {
+    throw new Error("Nenhum dado encontrado para o período informado.");
+  }
+
+  resultsList.classList.remove("hidden");
+  resultsList.innerHTML = collection
+    .map(
+      (item) => `
+        <article class="card">
+          <div class="text-block">
+            <h3>${escapeHTML(item.title || "Sem título")}</h3>
+
+            <p class="date">
+              ${escapeHTML(formatDate(item.date || ""))}
+            </p>
+
+            <div class="description">
+              ${sanitizeHTML(item.explanation || "Sem descrição disponível.")}
+            </div>
+          </div>
+
+          ${renderMedia(item)}
+        </article>
+      `,
+    )
+    .join("");
+
+  resultsList.focus();
+}
