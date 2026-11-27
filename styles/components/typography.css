@@ -66,8 +66,3 @@ span {
   font-size: var(--font-size-span);
   font-weight: var(--font-weight-medium);
 }
-
-.article {
-  padding: 10px;
-  overflow-wrap: anywhere;
-}

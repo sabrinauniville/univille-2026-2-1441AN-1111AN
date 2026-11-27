@@ -7,6 +7,8 @@ Projeto didático em HTML, CSS e JavaScript (sem framework) para consumir APIs p
 Este projeto desenvolve uma aplicação web integrada com serviços públicos da NASA:
 
 - **APOD**: Astronomy Picture of the Day
+- **NeoWs**: Near Earth Object Web Service
+- **InSight**: dados meteorológicos de Marte
 
 O projeto reforça conceitos de:
 
@@ -44,6 +46,8 @@ A organização foi separada por responsabilidade para deixar o ciclo de build, 
 ├── index.css
 ├── pages/
 │   ├── apod/
+│   ├── neows/
+│   ├── insight/
 │   └── contact/
 ├── scripts/
 │   ├── build/
@@ -87,9 +91,9 @@ A organização foi separada por responsabilidade para deixar o ciclo de build, 
 ### APOD
 
 - URL: <https://api.nasa.gov/planetary/apod>
-- Exibe a imagem ou vídeo astronômico do dia.
+- Retorna uma imagem ou vídeo astronômico, conforme o tipo de mídia disponível, junto com título, data e explicação.
 - Permite consulta por datas.
-- Apresenta descrição e conteúdo visual associado à data selecionada.
+- É o serviço deste projeto que fornece mídia visual.
 
 ### Parâmetros
 
@@ -102,6 +106,41 @@ A organização foi separada por responsabilidade para deixar o ciclo de build, 
   - end_date
   - count
   - thumbs
+
+### NeoWs
+
+- URL: <https://api.nasa.gov/neo/rest/v1/feed>
+- Consulta objetos próximos da Terra.
+- Apresenta dados de distância, magnitude, velocidade relativa, diâmetro estimado e risco potencial.
+- Retorna dados estruturados sobre asteroides; não fornece imagens nem vídeos.
+
+Parâmetros:
+
+- Obrigatórios:
+  - api_key
+
+- Opcionais:
+  - start_date (YYYY-MM-DD)
+  - end_date (YYYY-MM-DD)
+  - detailed
+  - page
+
+### InSight
+
+- URL: <https://api.nasa.gov/insight_weather/>
+- Mostra dados meteorológicos de Marte.
+- Exibe temperatura, pressão e velocidade do vento por sol marciano.
+- Retorna medições meteorológicas; não fornece imagens nem vídeos.
+
+Parâmetros:
+
+- Obrigatórios:
+  - api_key
+
+- Opcionais:
+  - feedtype
+  - ver
+  - format
 
 ## Licença
 

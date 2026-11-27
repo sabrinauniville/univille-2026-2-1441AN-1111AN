@@ -38,6 +38,37 @@
     "github.copilot.renameSuggestions.triggerAutomatically": false,
     "github.copilot.chat.anthropic.tools.websearch.maxUses": 1,
     "editor.wordWrap": "on",
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "files.exclude": {
+      "**/.vscode": true,
+      "**/.rules": true,
+      "**/.github": true,
+      "**/.cursor": true,
+      "**/.agents": true,
+      "**/AGENTS.md": true,
+      "**/CLAUDE.md": true,
+      "**/CODEOWNERS": true
+    },
+    "search.exclude": {
+      "**/.vscode": true,
+      "**/.rules": true,
+      "**/.github": true,
+      "**/.cursor": true,
+      "**/.agents": true,
+      "**/AGENTS.md": true,
+      "**/CLAUDE.md": true,
+      "**/CODEOWNERS": true
+    },
+    "files.readonlyInclude": {
+      "**/.vscode/**": true,
+      "**/.rules/**": true,
+      "**/.github/**": true,
+      "**/.cursor/**": true,
+      "**/.agents/**": true,
+      "**/AGENTS.md": true,
+      "**/CLAUDE.md": true,
+      "**/CODEOWNERS": true
+    },
+    "chat.editorWindow.enableWorktree": false
   }
 }

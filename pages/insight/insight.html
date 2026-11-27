@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InSight - NASA</title>
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/components/header.css" />
+    <link rel="stylesheet" href="../../styles/components/footer.css" />
+    <link rel="stylesheet" href="../../styles/components/accordion.css" />
+    <link rel="stylesheet" href="./insight.css" />
+    <script type="module" src="./insight.js"></script>
+  </head>
+
+  <body class="page-insight">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../../index.html">NASA APIs</a>
+
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="../../index.html">Início</a>
+          <a href="../apod/apod.html">APOD</a>
+          <a href="../neows/neows.html">NeoWs</a>
+          <a href="./insight.html" aria-current="page">InSight</a>
+          <a href="../contact/contact.html">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-insight">
+      <section class="section grey intro">
+        <h1>InSight - NASA</h1>
+        <h2>Clima em Marte</h2>
+        <p>
+          Acompanhe dados meteorológicos coletados pela sonda InSight em Marte,
+          incluindo temperatura, pressão e velocidade do vento por sol.
+        </p>
+      </section>
+
+      <section class="section grey date-range-panel info-panel">
+        <p>
+          A API do InSight utilizada neste projeto não aceita filtro por data na
+          requisição. Por isso, a página exibe o histórico disponível retornado
+          pela NASA.
+        </p>
+
+        <button id="update-data" type="button" aria-controls="results-list">
+          Carregar histórico disponível
+        </button>
+      </section>
+
+      <section class="section grey main-result">
+        <article
+          id="featured-weather"
+          class="card hidden"
+          aria-live="polite"
+          tabindex="-1"
+        >
+          <div class="text-block">
+            <h3 id="featured-weather-title"></h3>
+            <p class="date" id="featured-weather-date"></p>
+            <p id="featured-weather-description"></p>
+          </div>
+        </article>
+      </section>
+
+      <section
+        id="results-list"
+        class="section grey results-list hidden"
+        role="region"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-label="Resultados da busca"
+        tabindex="-1"
+      ></section>
+
+      <p id="get-data-response" role="status" aria-live="polite"></p>
+      <p id="update-data-response" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>NASA Open APIs • UNIVILLE</p>
+        <small>Todos os direitos reservados</small>
+      </div>
+    </footer>
+  </body>
+</html>

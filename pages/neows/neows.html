@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoWs - NASA</title>
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/components/accordion.css" />
+    <link rel="stylesheet" href="./neows.css" />
+    <script type="module" src="./neows.js"></script>
+  </head>
+
+  <body class="page-neows">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../../index.html">NASA APIs</a>
+
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a href="../../index.html">Início</a>
+          <a href="../apod/apod.html">APOD</a>
+          <a href="./neows.html" aria-current="page">NeoWs</a>
+          <a href="../insight/insight.html">InSight</a>
+          <a href="../contact/contact.html">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-neows">
+      <section class="section grey intro">
+        <h1>NeoWs - NASA</h1>
+        <h2>Objetos próximos da Terra</h2>
+        <p>
+          Consulte asteroides que passaram perto da Terra em um intervalo de
+          datas e veja os principais dados de aproximação, risco e velocidade.
+        </p>
+      </section>
+
+      <section class="section grey date-range-panel">
+        <label for="start-date">
+          Data inicial
+          <input id="start-date" type="date" max="" />
+        </label>
+
+        <label for="end-date">
+          Data final
+          <input id="end-date" type="date" max="" />
+        </label>
+
+        <button id="update-data" type="button" aria-controls="results-list">
+          Buscar asteroides
+        </button>
+      </section>
+
+      <section class="section grey main-result">
+        <article
+          id="featured-asteroid"
+          class="card hidden"
+          aria-live="polite"
+          tabindex="-1"
+        >
+          <div class="text-block">
+            <h3 id="featured-asteroid-title"></h3>
+            <p class="date" id="featured-asteroid-date"></p>
+            <p id="featured-asteroid-description"></p>
+          </div>
+        </article>
+      </section>
+
+      <section
+        id="results-list"
+        class="section grey results-list hidden"
+        role="region"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-label="Resultados da busca"
+        tabindex="-1"
+      ></section>
+
+      <p id="get-data-response" role="status" aria-live="polite"></p>
+      <p id="update-data-response" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>NASA Open APIs • UNIVILLE</p>
+        <small>Todos os direitos reservados</small>
+      </div>
+    </footer>
+  </body>
+</html>

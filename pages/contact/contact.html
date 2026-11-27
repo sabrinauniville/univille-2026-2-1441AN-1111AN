@@ -1,154 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato - NASA APIs</title>
-    <link rel="stylesheet" href="../../styles/styles.css" />
-    <link rel="stylesheet" href="./contact.css" />
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - NASA</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/components/header.css">
+    <link rel="stylesheet" href="../../styles/components/footer.css">
+    <link rel="stylesheet" href="./contact.css">
+    <script type="module" src="./contact.js"></script>
+</head>
+
+<body class="page-contact" cz-shortcut-listen="true">
     <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="../../index.html">NASA APIs</a>
-        <nav class="site-nav" aria-label="Navegação principal">
-          <a href="../../index.html">Início</a>
-          <a href="../apod/apod.html">APOD</a>
-          <a href="./contact.html" aria-current="page">Contato</a>
-        </nav>
-      </div>
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html">NASA APIs</a>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <a href="../../index.html">Início</a>
+                <a href="../apod/apod.html" aria-current="page">APOD</a>
+                <a href="../neows/neows.html">NeoWs</a>
+                <a href="../insight/insight.html">InSight</a>
+                <a href="../contact/contact.html">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content" class="page-contact">
-      <section class="intro">
-        <div class="container">
-          <h1>Contato</h1>
-          <h2>Fale com a equipe</h2>
-          <p>
-            Preencha o formulário abaixo para enviar sua mensagem. Responderemos
-            o mais breve possível.
-          </p>
-        </div>
-      </section>
-
-      <section
-        class="section grey contact-card"
-        aria-labelledby="contact-form-title"
-      >
-        <div class="container">
-          <h3 id="contact-form-title">Enviar mensagem</h3>
-
-          <form id="contact-form" novalidate>
-            <div class="field-group">
-              <label for="name">
-                Nome completo
-                <span class="required-mark" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                maxlength="80"
-                placeholder="Digite seu nome"
-                aria-describedby="name-help name-error"
-                aria-invalid="false"
-                required
-              />
-              <small id="name-help" class="field-help"
-                >Informe seu nome completo.</small
-              >
+        <section class="intro">
+            <div class="container">
+                <h1>Contato</h1>
+                <h2>Fale com a equipe</h2>
+                <p>
+                    Preencha o formulário abaixo para enviar sua mensagem. Responderemos o mais breve possível.
+                </p>
             </div>
+        </section>
 
-            <div class="field-group">
-              <label for="email">
-                E-mail
-                <span class="required-mark" aria-hidden="true">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                maxlength="120"
-                placeholder="seuemail@exemplo.com"
-                aria-describedby="email-help email-error"
-                aria-invalid="false"
-                required
-              />
-              <small id="email-help" class="field-help"
-                >Use um e-mail válido.</small
-              >
+        <section class="section grey contact-card" aria-labelledby="contact-form-title">
+            <div class="container">
+                <h3 id="contact-form-title">Enviar mensagem</h3>
+
+                <form id="contact-form" novalidate="">
+                    <div class="field-group">
+                        <label for="name">Nome completo <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input id="name" name="name" type="text" maxlength="80" placeholder="Digite seu nome"
+                            aria-describedby="name-help name-error" aria-invalid="false" required="">
+                        <small id="name-help" class="field-help">Informe seu nome completo.</small>
+                        <small id="name-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="email">E-mail <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input id="email" name="email" type="email" maxlength="120" placeholder="seuemail@exemplo.com"
+                            aria-describedby="email-help email-error" aria-invalid="false" required="">
+                        <small id="email-help" class="field-help">Use um e-mail válido.</small>
+                        <small id="email-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="subject">Assunto <span class="required-mark" aria-hidden="true">*</span></label>
+                        <select id="subject" name="subject" aria-describedby="subject-help subject-error"
+                            aria-invalid="false" required="">
+                            <option value="">Selecione...</option>
+                            <option value="suporte">Suporte</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <small id="subject-help" class="field-help">Escolha o motivo do contato.</small>
+                        <small id="subject-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="message">Mensagem <span class="required-mark" aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="5" maxlength="500"
+                            placeholder="Escreva sua mensagem aqui" aria-describedby="message-help message-error"
+                            aria-invalid="false" required=""></textarea>
+                        <small id="message-help" class="field-help">A mensagem deve ter entre 10 e 500
+                            caracteres.</small>
+                        <small id="message-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="submit-contact" type="submit" class="cta-button" disabled>
+                            Enviar mensagem
+                        </button>
+                        <button id="reset-form" type="reset" class="secondary-button">Limpar</button>
+                    </div>
+
+                    <p id="form-status" class="status-banner" role="status" aria-live="polite" hidden=""></p>
+                </form>
             </div>
-
-            <div class="field-group">
-              <label for="subject">
-                Assunto
-                <span class="required-mark" aria-hidden="true">*</span>
-              </label>
-              <select
-                id="subject"
-                name="subject"
-                aria-describedby="subject-help subject-error"
-                aria-invalid="false"
-                required
-              >
-                <option value="">Selecione...</option>
-                <option value="suporte">Suporte</option>
-                <option value="sugestao">Sugestão</option>
-                <option value="outro">Outro</option>
-              </select>
-              <small id="subject-help" class="field-help"
-                >Escolha o motivo do contato.</small
-              >
-            </div>
-
-            <div class="field-group">
-              <label for="message">
-                Mensagem
-                <span class="required-mark" aria-hidden="true">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                maxlength="500"
-                placeholder="Escreva sua mensagem aqui"
-                aria-describedby="message-help message-error"
-                aria-invalid="false"
-                required
-              ></textarea>
-              <small id="message-help" class="field-help"
-                >A mensagem deve ter entre 10 e 500 caracteres.</small
-              >
-            </div>
-
-            <div class="form-actions">
-              <button
-                id="submit-contact"
-                type="submit"
-                class="cta-button"
-                disabled
-                aria-disabled="true"
-              >
-                Enviar mensagem
-              </button>
-              <button id="reset-form" type="reset" class="secondary-button">
-                Limpar
-              </button>
-            </div>
-
-            <p
-              id="form-status"
-              class="status-banner"
-              role="status"
-              aria-live="polite"
-              hidden
-            ></p>
-          </form>
-        </div>
-      </section>
+        </section>
     </main>
 
-    <footer class="site-footer"></footer>
-  </body>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>NASA Open APIs • UNIVILLE</p>
+            <small>Todos os direitos reservados</small>
+        </div>
+    </footer>
+
+</body>
+
 </html>
