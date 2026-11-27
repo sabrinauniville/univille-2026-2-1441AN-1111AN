@@ -156,7 +156,6 @@ function setDefaultDateRange() {
 
   startDateInput.min = minDate;
   startDateInput.max = maxDate;
-
   endDateInput.min = minDate;
   endDateInput.max = maxDate;
 
