@@ -1,86 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore a Astronomy Picture of the Day (APOD) da NASA e descubra imagens e vídeos astronômicos com explicações científicas."
-    />
-    <title>APOD - NASA APIs</title>
-    <link rel="stylesheet" href="../../styles/styles.css" />
-    <link rel="stylesheet" href="./apod.css" />
-    <script type="module" src="./apod.js"></script>
-  </head>
 
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="../../index.html">NASA APIs</a>
-        <nav class="site-nav" aria-label="Navegação principal">
-          <a href="../../index.html">Início</a>
-          <a href="../apod/apod.html" aria-current="page">APOD</a>
-          <a href="../neows/neows.html">NeoWs</a>
-          <a href="../insight/insight.html">InSight</a>
-          <a href="../contact/contact.html">Contato</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APOD - NASA APIs</title>
+  <link rel="stylesheet" href="../../styles/styles.css">
+  <link rel="stylesheet" href="./apod.css">
+  <script type="module" src="./apod.js"></script>
+</head>
 
-    <main id="main-content" class="page-apod">
-      <section class="section grey intro" aria-labelledby="page-title">
-        <h1 id="page-title">APOD - NASA</h1>
-        <h2>Imagem Astronômica do Dia</h2>
-        <p>
-          Acesse diariamente para visualizar uma nova imagem ou vídeo do
-          universo, acompanhado de um breve texto explicativo escrito por um
-          astrônomo profissional.
-        </p>
-      </section>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">NASA APIs</a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="../../index.html" aria-current="page">Início</a>
+        <a href="./apod.html" aria-current="page">APOD</a>
+        <a href="../contact/contact.html" aria-current="page">Contato</a>
+      </nav>
+    </div>
+  </header>
 
-      <section class="section grey date-range-panel" aria-label="Filtros de pesquisa">
-        <label for="start-date">
-          Data inicial
-          <input id="start-date" type="date" required />
-        </label>
-        <label for="end-date">
-          Data final
-          <input id="end-date" type="date" required />
-        </label>
-        <button id="update-data" type="button" aria-controls="results-list">
-          Buscar imagens
-        </button>
-      </section>
+  <main id="main-content" class="page-apod">
+    <div class="container">
+      <section class="section grey intro"></section>
+      <section class="section grey search-form date-range-panel"></section>
+      <section class="section grey main-result"></section>
+      <section id="results-list" class="section grey search-results results-list hidden" role="region"
+        aria-live="polite" aria-atomic="true" aria-label="Resultados da busca" tabindex="-1"></section>
+    </div>
+  </main>
 
-      <article id="card" class="card hidden" aria-live="polite" tabindex="-1">
-        <div class="text-block">
-          <h3 id="photo-title"></h3>
-          <p class="date" id="photo-date"></p>
-          <p id="photo-description"></p>
-        </div>
-        <img id="photo-image" src="" alt="Imagem astronômica do dia da NASA" />
-      </article>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>NASA Open APIs • UNIVILLE</p>
+      <small>Todos os direitos reservados</small>
+  </footer>
+</body>
 
-      <section
-        id="results-list"
-        class="section grey results-list hidden"
-        role="region"
-        aria-live="polite"
-        aria-atomic="false"
-        aria-label="Resultados da pesquisa"
-        tabindex="-1"
-      ></section>
-
-      <p id="get-data-response" role="status" aria-live="polite"></p>
-
-      <p id="update-data-response" role="status" aria-live="polite"></p>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>NASA Open APIs • UNIVILLE</p>
-        <small>Todos os direitos reservados</small>
-      </div>
-    </footer>
-  </body>
 </html>

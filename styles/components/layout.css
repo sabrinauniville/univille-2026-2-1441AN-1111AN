@@ -30,7 +30,7 @@ article,
 }
 
 .section {
-  padding: var(--space-4) var(--space-4);
+  padding: var(--space-8) var(--space-6);
   border-radius: var(--radius-card);
   background-color: var(--color-bg-dark);
   color: var(--color-white);
@@ -59,9 +59,10 @@ article,
   margin: 0 auto;
 }
 
-.article {
-  padding: var(--space-5) var(--space-5);
-  overflow-wrap: anywhere;
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-8) var(--space-6);
+  }
 }
 
 @media (min-width: 861px) {

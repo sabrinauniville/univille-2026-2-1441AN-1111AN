@@ -1,9 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const {
-  resolveEnvironment,
-  serializeEnvironment,
-} = require("../dev/environment-config");
 
 const projectRoot = path.resolve(__dirname, "../..");
 const publicDir = path.join(projectRoot, "public");
@@ -15,15 +11,83 @@ const requestedMode = (
 const selectedMode =
   requestedMode === "production" ? "production" : "development";
 
-const environment = resolveEnvironment(projectRoot, selectedMode);
+function loadEnvFile(filePath) {
+  if (!fs.existsSync(filePath)) {
+    return {};
+  }
+
+  const raw = fs.readFileSync(filePath, "utf8");
+  const values = {};
+
+  for (const line of raw.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) {
+      continue;
+    }
+
+    const separatorIndex = trimmed.indexOf("=");
+    if (separatorIndex === -1) {
+      continue;
+    }
+
+    const key = trimmed.slice(0, separatorIndex).trim();
+    const value = trimmed.slice(separatorIndex + 1).trim();
+    values[key] = value.replace(/^['"]|['"]$/g, "");
+  }
+
+  return values;
+}
+
+function resolveEnv() {
+  const envFiles = [
+    selectedMode === "production" ? ".env.production" : ".env.local",
+    ".env",
+  ];
+
+  const env = {};
+  for (const fileName of envFiles) {
+    const filePath = path.join(projectRoot, fileName);
+    Object.assign(env, loadEnvFile(filePath));
+  }
+
+  if (!env.NASA_API_KEY) {
+    if (selectedMode === "production") {
+      throw new Error(
+        `NASA_API_KEY ausente. Crie o arquivo ${
+          selectedMode === "production" ? ".env.production" : ".env.local"
+        } (ou .env) com a chave da API da NASA.`,
+      );
+    }
+
+    console.warn(
+      "[BUILD] NASA_API_KEY ausente no ambiente local; o build continuará com valor vazio.",
+    );
+    env.NASA_API_KEY = "";
+  }
+
+  return env;
+}
+
+function writeEnvironmentFile(targetPath, values) {
+  const content = `export const environment = {
+  production: ${selectedMode === "production"},
+  nasaApiUrl: "${values.NASA_API_URL || "https://api.nasa.gov/planetary/apod"}",
+  nasaNeoWsUrl: "${values.NASA_NEO_WS_URL || "https://api.nasa.gov/neo/rest/v1/feed"}",
+  nasaInsightWeatherUrl: "${
+    values.NASA_INSIGHT_WEATHER_URL || "https://api.nasa.gov/insight_weather/"
+  }",
+  nasaApiKey: "${values.NASA_API_KEY}",
+};\n`;
+
+  fs.writeFileSync(targetPath, content, "utf8");
+}
+
+const env = resolveEnv();
+
+writeEnvironmentFile(path.join(projectRoot, "environment.js"), env);
 
 fs.rmSync(publicDir, { recursive: true, force: true });
 fs.mkdirSync(publicDir, { recursive: true });
-fs.writeFileSync(
-  path.join(publicDir, "environment.js"),
-  serializeEnvironment(environment),
-  "utf8",
-);
 
 const requiredFiles = ["index.html", "index.css"];
 const optionalFiles = [
@@ -54,7 +118,7 @@ const optionalFiles = [
   "scripts/shared/page-state.js",
   "scripts/shared/validation.js",
 ];
-const filesToCopy = [...requiredFiles, ...optionalFiles];
+const filesToCopy = [...requiredFiles, ...optionalFiles, "environment.js"];
 
 for (const fileName of filesToCopy) {
   const sourcePath = path.join(projectRoot, fileName);

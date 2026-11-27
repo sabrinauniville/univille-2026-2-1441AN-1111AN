@@ -10,6 +10,7 @@
   background-color: var(--color-bg);
   box-shadow: 0 2px 8px var(--color-shadow);
   overflow-wrap: anywhere;
+  margin-bottom: 20px;
 }
 
 .content-card {

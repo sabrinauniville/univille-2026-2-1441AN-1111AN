@@ -1,16 +1,11 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const {
-  resolveEnvironment,
-  serializeEnvironment,
-} = require("../dev/environment-config");
 
 const DEFAULT_PORT = 8080;
 const PORT_CANDIDATES = Array.from({ length: 50 }, (_, index) => 8080 + index);
 const PORT = Number(process.env.PORT || DEFAULT_PORT);
 const ROOT_DIR = path.join(__dirname, "../..");
-const environment = resolveEnvironment(ROOT_DIR, "development");
 
 const BLOCKLIST = [
   "openai.com",
@@ -75,22 +70,6 @@ function startServer(port, candidateIndex = 0) {
         "X-Content-Type-Options": "nosniff",
       });
       res.end("Acesso restrito por política local do ambiente.");
-      return;
-    }
-
-    if ((req.url || "").split("?")[0] === "/environment.js") {
-      res.writeHead(200, {
-        "Content-Type": "text/javascript",
-        "X-Content-Type-Options": "nosniff",
-        "Cache-Control": "no-store",
-      });
-      res.end(serializeEnvironment(environment), "utf-8");
-      return;
-    }
-
-    if (/(^|\/)\.env(?:$|\.)/.test((req.url || "").split("?")[0])) {
-      res.writeHead(404, { "Content-Type": "text/plain" });
-      res.end("Not Found");
       return;
     }
 
