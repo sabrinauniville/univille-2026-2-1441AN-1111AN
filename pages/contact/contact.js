@@ -47,3 +47,13 @@ function validateForm() {
 
   return isValid;
 }
+
+function cleanFieldErrors() {
+  formFields.forEach(({ field }) => {
+    field.classList.remove("input-error");
+    field.setAttribute("aria-invalid", "false");
+
+    const errorElement = document.getElementById(`${field.id}-error`);
+    errorElement.textContent = "";
+  });
+}

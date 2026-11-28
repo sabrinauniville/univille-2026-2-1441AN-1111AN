@@ -24,7 +24,7 @@
   "github.copilot.nextEditSuggestions.enabled": false,
   "editor.inlineSuggest.enabled": false,
   "chat.agent.enabled": false,
-  "chat.disableAIFeatures": true,
+  "chat.disableAIFeatures": false,
   "chat.commandCenter.enabled": false,
   "chat.tools.terminal.autoApprove": {},
   "chat.tools.urls.autoApprove": {},
