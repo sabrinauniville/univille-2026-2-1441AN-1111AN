@@ -47,3 +47,21 @@ function validateForm() {
 
   return isValid;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Js carregado");
+
+  if (!form) {
+    return;
+  }
+
+  // Registrar eventos
+  form.addEventListener("submit", submitForm);
+  form.addEventListener("reset", resetForm);
+
+  // Verificar os campos enquanto o usuário digita
+  formFields.forEach(({ field }) => {
+    field.addEventListener("input", updateSubmitButtonStatus);
+    field.addEventListener("change", updateSubmitButtonStatus);
+  });
+});
